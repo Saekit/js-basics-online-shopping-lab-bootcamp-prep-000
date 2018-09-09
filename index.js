@@ -31,11 +31,11 @@ function viewCart() {
 }
 
 function total() {
-  var price1 = Object.values(cart[0]).pop();
-  var price2 = Object.values(cart[1]).pop();
-  var price3 = Object.values(cart[2]).pop();  
-  var total = price1 + price2 + price3;
-  return(`$${total}`);
+  var totalValue = 0;
+  for (var i = 0; i < cart.length; i++) {
+    totalValue += Object.values(cart[i]).pop();
+  }
+  return (`$${totalValue}`);
 }
 
 function removeFromCart(item) {
