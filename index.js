@@ -38,16 +38,14 @@ function viewCart() {
    }
 
 function total() {
-  const getSum = (a, b) => a + b;
   var totalValue = [];
   for (var i = 0; i < cart.length; i++) {
     var str = Object.values(cart[i]).toString();
     var strNum = str.match(/(\d+)/g).toString();
     var num = parseInt(strNum)
-    totalValue.push(num);
-    
+    totalValue += num;
   }
-  return totalValue.reduce(getSum);
+  return totalValue;
 }
 
 function removeFromCart(item) {
