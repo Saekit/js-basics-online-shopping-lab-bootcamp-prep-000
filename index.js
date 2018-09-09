@@ -19,7 +19,7 @@ function addToCart(item) {
 function viewCart() {
   var itemsAndPrice = [];
   if (cart.length === 0) {
-     console.log("Your shopping cart is empty.");
+     return ("Your shopping cart is empty.");
    }        
   if (cart.lenght !== 0 && cart.length < 2) {
       var cartItem = Object.values(cart[0]).join(` at $`); 
