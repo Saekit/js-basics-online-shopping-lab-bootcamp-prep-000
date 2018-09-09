@@ -38,7 +38,7 @@ function viewCart() {
    }
 
 function total() {
-  var totalValue = 0;
+  var totalValue = 10;
   for (var i = 0; i < cart.length; i++) {
     var str = Object.values(cart[i]).toString();
     var strNum = str.match(/(\d+)/g).toString();
