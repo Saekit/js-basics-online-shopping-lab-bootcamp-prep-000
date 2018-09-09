@@ -40,23 +40,11 @@ function total() {
 
 function removeFromCart(item) {
   for (let i = 0; i < cart.length; i++) {
-    var firstItem = Object.values(cart[i]).slice(0, 1);
-    var secondItem = Object.values(cart[i + 1]).slice(0, 1);
-    var thirdItem = Object.values(cart[i + 2]).slice(0, 1);
- 
-    if (item === firstItem.toString()) {
-    cart.splice(0, 1);
-    return cart;
+    if (item === Object.values(cart[i]).slice(0, 1).toString()) {
+      cart.splice(i, 1);
+      return cart;
     }
-    else if (item === secondItem.toString()) {
-    cart.splice(1, 1);
-    return cart;
-    }
-    else if (item === thirdItem.toString()) {
-    cart.splice(2, 1);
-    return cart;
-    }
-    else if (item){
+    else if (!item){
       return ("That item is not in your cart.");
     }
   }
