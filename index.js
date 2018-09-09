@@ -21,9 +21,9 @@ function viewCart() {
   if (cart.length === 0) {
      console.log("Your shopping cart is empty.");
    }        
-  if (cart.lenght != 0 && cart.length < 2) {
-      var cartItems = Object.values(cart[0]).join(` at $`); 
-      return (`In your cart, you have ${cartItems}.`); // "In your cart, you have apples at $81."
+  if (cart.lenght !== 0 && cart.length < 2) {
+      var cartItem = Object.values(cart[0]).join(` at $`); 
+      return (`In your cart, you have ${cartItem}.`); 
     
   } else if (cart.length >= 2) {
     for(var i = 0; i < cart.length; i++) {
@@ -33,7 +33,7 @@ function viewCart() {
     var lastItem = itemsAndPrice.pop();
     var final = itemsAndPrice.concat('and', lastItem).join(', ').replace(/and,/g, 'and');
     
-     return (`In your cart, you have ${[final]}.`); // "In your cart, you have apples at $55, bananas at $63, carrots at $9."
+     return (`In your cart, you have ${[final]}.`);
     }
    }
 
