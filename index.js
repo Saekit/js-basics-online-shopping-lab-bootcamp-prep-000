@@ -20,6 +20,7 @@ function viewCart() {
    if (cart.length === 0) {
        return ("Your shopping cart is empty.");
    } else {
+     
        var itemsAndPrice = [];
        for(var i = 0; i < cart.length; i++) {
           var cartItems = Object.values(cart[i]).join(' at $');
