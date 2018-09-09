@@ -17,19 +17,25 @@ function addToCart(item) {
 }
 
 function viewCart() {
-   if (cart.length === 0) {
-       return ("Your shopping cart is empty.");
-   } else {
-     
-       var itemsAndPrice = [];
-       for(var i = 0; i < cart.length; i++) {
-          var cartItems = Object.values(cart[i]).join(' at $');
-          itemsAndPrice.push(cartItems);
-       }
-     var final = itemsAndPrice.splice(itemsAndPrice.length - 1, 0, "and ");
-        return (`In your cart, you have ${[itemsAndPrice.join(', ')]}.`);
+  var itemsAndPrice = [];
+  if (cart.length === 0) {
+     console.log("Your shopping cart is empty.");
+   }        
+  if (cart.lenght != 0 && cart.length < 2) {
+      var cartItems = Object.values(cart[0]).join(` at $`); 
+      return (`In your cart, you have ${cartItems}.`); // "In your cart, you have apples at $81."
+    
+  } else if (cart.length >= 2) {
+    for(var i = 0; i < cart.length; i++) {
+        var cartItems = Object.values(cart[i]).join(` at $`);
+        itemsAndPrice.push(cartItems);
+    }
+    var lastItem = itemsAndPrice.pop();
+    var final = itemsAndPrice.concat('and', lastItem).join(', ').replace(/and,/g, 'and');
+    
+     return (`In your cart, you have ${[final]}.`); // "In your cart, you have apples at $55, bananas at $63, carrots at $9."
+    }
    }
-}
 
 function total() {
   var totalValue = 0;
