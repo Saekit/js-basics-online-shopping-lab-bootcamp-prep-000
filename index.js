@@ -35,7 +35,7 @@ function total() {
   for (var i = 0; i < cart.length; i++) {
     totalValue += Object.values(cart[i]).pop();
   }
-  return (`$${totalValue}`);
+  return totalValue;
 }
 
 function removeFromCart(item) {
