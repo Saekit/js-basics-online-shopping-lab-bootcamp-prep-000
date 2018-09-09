@@ -40,7 +40,10 @@ function viewCart() {
 function total() {
   var totalValue = 0;
   for (var i = 0; i < cart.length; i++) {
-    totalValue += Object.values(cart[i]).pop();
+    var str = Object.values(cart[i]).toString();
+    var strNum = str.match(/(\d+)/g).toString();
+    var num = parseInt(strNum)
+    totalValue += num;
   }
   return totalValue;
 }
